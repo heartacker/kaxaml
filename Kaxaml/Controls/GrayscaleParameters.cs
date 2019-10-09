@@ -4,7 +4,7 @@ namespace Kaxaml.Controls
 {
     public class GrayscaleParameters
     {
-        #region Fields
+        #regionÂ Fields
 
 
         private double _RedDistribution = 0.30;
@@ -13,9 +13,9 @@ namespace Kaxaml.Controls
         private double _Compression = 0.8;
         private double _Washout = -0.05;
 
-        #endregion Fields
+        #endregionÂ Fields
 
-        #region Properties
+        #regionÂ Properties
 
 
         public double RedDistribution
@@ -49,6 +49,6 @@ namespace Kaxaml.Controls
         }
 
 
-        #endregion Properties
+        #endregionÂ Properties
     }
 }

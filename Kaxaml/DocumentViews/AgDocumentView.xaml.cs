@@ -22,7 +22,7 @@ namespace Kaxaml.DocumentViews
     public partial class AgDocumentView : System.Windows.Controls.UserControl, IXamlDocumentView
     {
 
-        #region Constructors
+        #regionÂ Constructors
 
         public AgDocumentView()
         {
@@ -41,16 +41,16 @@ namespace Kaxaml.DocumentViews
             Parse();
         }
 
-        #endregion Constructors
+        #endregionÂ Constructors
 
-        #region Event Handlers
+        #regionÂ EventÂ Handlers
 
         void ContentArea_ContentRendered(object sender, EventArgs e)
         {
             KaxamlInfo.RaiseContentLoaded();
         }
 
-        #endregion Event Handlers
+        #endregionÂ EventÂ Handlers
 
 
         #region Private Fields
@@ -328,7 +328,7 @@ namespace Kaxaml.DocumentViews
                         ErrorText = ErrorText.Replace("\n", "");
                         ErrorText = ErrorText.Replace("\t", "");
 
-                        // get rid of everything after "Line" if it is in the last 30 characters 
+                        // get rid of everything after "Line" if it is in the last 30 characters
                         int pos = ErrorText.LastIndexOf("[Line");
                         if (pos > 0 && pos > (ErrorText.Length - 50))
                         {
@@ -386,7 +386,7 @@ namespace Kaxaml.DocumentViews
             ErrorText = ErrorText.Replace("\n", "");
             ErrorText = ErrorText.Replace("\t", "");
 
-            // get rid of everything after "Line" if it is in the last 30 characters 
+            // get rid of everything after "Line" if it is in the last 30 characters
             int pos = ErrorText.LastIndexOf("Line");
             if (pos > 0 && pos > (ErrorText.Length - 50))
             {
@@ -439,8 +439,8 @@ namespace Kaxaml.DocumentViews
 
         private void ErrorOverlayAnimationCompleted(object sender, EventArgs e)
         {
-            // once we're done fading into the "snapshot", we want to 
-            // get rid of the existing content so that any really bad 
+            // once we're done fading into the "snapshot", we want to
+            // get rid of the existing content so that any really bad
             // error (like one that is consuming memory) isn't persisted
 
             // ContentArea.Content = null;

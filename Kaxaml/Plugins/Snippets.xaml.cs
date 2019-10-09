@@ -21,13 +21,13 @@ namespace Kaxaml.Plugins.Default
     public partial class Snippets : UserControl
     {
 
-        #region Const Fields
+        #regionÂ ConstÂ Fields
 
         private const string _SnippetsFile = "KaxamlSnippets.xml";
 
-        #endregion Const Fields
+        #endregionÂ ConstÂ Fields
 
-        #region Fields
+        #regionÂ Fields
 
 
         private ObservableCollection<SnippetCategory> _SnippetCategories;
@@ -36,9 +36,9 @@ namespace Kaxaml.Plugins.Default
         EventHandler<TextBoxOverlayHideEventArgs> SnippetHidden;
         EventHandler<TextBoxOverlayHideEventArgs> CategoryHidden;
 
-        #endregion Fields
+        #endregionÂ Fields
 
-        #region Constructors
+        #regionÂ Constructors
 
         public Snippets()
         {
@@ -47,9 +47,9 @@ namespace Kaxaml.Plugins.Default
             InitializeComponent();
         }
 
-        #endregion Constructors
+        #endregionÂ Constructors
 
-        #region Properties
+        #regionÂ Properties
 
 
         public ObservableCollection<SnippetCategory> SnippetCategories
@@ -96,18 +96,18 @@ namespace Kaxaml.Plugins.Default
         }
 
 
-        #endregion Properties
+        #endregionÂ Properties
 
-        #region Event Handlers
+        #regionÂ EventÂ Handlers
 
         void editor_CommitValues(object sender, RoutedEventArgs e)
         {
             WriteValues();
         }
 
-        #endregion Event Handlers
+        #endregionÂ EventÂ Handlers
 
-        #region Private Methods
+        #regionÂ PrivateÂ Methods
 
         private void MoveSnippetDown(object o, EventArgs e)
         {
@@ -141,9 +141,9 @@ namespace Kaxaml.Plugins.Default
             WriteValues();
         }
 
-        #endregion Private Methods
+        #endregionÂ PrivateÂ Methods
 
-        #region Public Methods
+        #regionÂ PublicÂ Methods
 
         public void DeleteCategory(object o, EventArgs e)
         {
@@ -217,7 +217,7 @@ namespace Kaxaml.Plugins.Default
                 WriteValues();
             }
 
-            // if the drop target is a TabItem, then expand it 
+            // if the drop target is a TabItem, then expand it
             if (o.GetType() == typeof(TabItem))
             {
                 TabItem ti = (TabItem)o;
@@ -470,14 +470,14 @@ namespace Kaxaml.Plugins.Default
 
         }
 
-        #endregion Public Methods
+        #endregionÂ PublicÂ Methods
 
     }
 
     public class SnippetCompletionData : ICompletionData
     {
 
-        #region Constructors
+        #regionÂ Constructors
 
         public SnippetCompletionData(string description, string text, Snippet snippet)
         {
@@ -486,7 +486,7 @@ namespace Kaxaml.Plugins.Default
             _Snippet = snippet;
         }
 
-        #endregion Constructors
+        #endregionÂ Constructors
 
 
         #region ICompletionData Members
@@ -543,7 +543,7 @@ namespace Kaxaml.Plugins.Default
     public class Snippet : INotifyPropertyChanged
     {
 
-        #region Fields
+        #regionÂ Fields
 
 
         private string _Name;
@@ -552,9 +552,9 @@ namespace Kaxaml.Plugins.Default
 
         private SnippetCategory _Category;
 
-        #endregion Fields
+        #endregionÂ Fields
 
-        #region Constructors
+        #regionÂ Constructors
 
         public Snippet(string name, string shortcut, string text, SnippetCategory category)
         {
@@ -564,9 +564,9 @@ namespace Kaxaml.Plugins.Default
             Category = category;
         }
 
-        #endregion Constructors
+        #endregionÂ Constructors
 
-        #region Properties
+        #regionÂ Properties
 
 
         public string Name
@@ -623,24 +623,24 @@ namespace Kaxaml.Plugins.Default
         }
 
 
-        #endregion Properties
+        #endregionÂ Properties
 
-        #region Events
+        #regionÂ Events
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        #endregion Events
+        #endregionÂ Events
 
-        #region Overridden Methods
+        #regionÂ OverriddenÂ Methods
 
         public override string ToString()
         {
             return Text;
         }
 
-        #endregion Overridden Methods
+        #endregionÂ OverriddenÂ Methods
 
-        #region Private Methods
+        #regionÂ PrivateÂ Methods
 
         private void OnPropertyChanged(String info)
         {
@@ -650,9 +650,9 @@ namespace Kaxaml.Plugins.Default
             }
         }
 
-        #endregion Private Methods
+        #endregionÂ PrivateÂ Methods
 
-        #region Public Methods
+        #regionÂ PublicÂ Methods
 
         public string IndentedText(int count, bool skipFirstLine)
         {
@@ -698,23 +698,23 @@ namespace Kaxaml.Plugins.Default
             return Text;
         }
 
-        #endregion Public Methods
+        #endregionÂ PublicÂ Methods
 
     }
 
     public class SnippetCategory : INotifyPropertyChanged
     {
 
-        #region Fields
+        #regionÂ Fields
 
 
         private readonly ObservableCollection<Snippet> _Snippets = new ObservableCollection<Snippet>();
 
         private string _Name;
 
-        #endregion Fields
+        #endregionÂ Fields
 
-        #region Properties
+        #regionÂ Properties
 
 
         public ObservableCollection<Snippet> Snippets
@@ -737,15 +737,15 @@ namespace Kaxaml.Plugins.Default
         }
 
 
-        #endregion Properties
+        #endregionÂ Properties
 
-        #region Events
+        #regionÂ Events
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        #endregion Events
+        #endregionÂ Events
 
-        #region Private Methods
+        #regionÂ PrivateÂ Methods
 
         private void OnPropertyChanged(String info)
         {
@@ -755,9 +755,9 @@ namespace Kaxaml.Plugins.Default
             }
         }
 
-        #endregion Private Methods
+        #endregionÂ PrivateÂ Methods
 
-        #region Public Methods
+        #regionÂ PublicÂ Methods
 
         public void AddSnippet(string name, string shortcut, string text)
         {
@@ -765,7 +765,7 @@ namespace Kaxaml.Plugins.Default
             Snippets.Add(s);
         }
 
-        #endregion Public Methods
+        #endregionÂ PublicÂ Methods
 
     }
 
@@ -775,16 +775,16 @@ namespace Kaxaml.Plugins.Default
     public class TextBoxOverlayHideEventArgs : EventArgs
     {
 
-        #region Fields
+        #regionÂ Fields
 
 
         public readonly string ResultText;
 
         public readonly TextBoxOverlayResult Result;
 
-        #endregion Fields
+        #endregionÂ Fields
 
-        #region Constructors
+        #regionÂ Constructors
 
         public TextBoxOverlayHideEventArgs(TextBoxOverlayResult result, string resultText)
         {
@@ -792,14 +792,14 @@ namespace Kaxaml.Plugins.Default
             ResultText = resultText;
         }
 
-        #endregion Constructors
+        #endregionÂ Constructors
 
     }
 
     public class TextBoxOverlay : TextBox
     {
 
-        #region Fields
+        #regionÂ Fields
 
 
         private bool IsOpen = false;
@@ -808,24 +808,24 @@ namespace Kaxaml.Plugins.Default
         private ElementAdorner _ElementAdorner = null;
         private UIElement _Element;
 
-        #endregion Fields
+        #endregionÂ Fields
 
-        #region Constructors
+        #regionÂ Constructors
 
         public TextBoxOverlay()
         {
 
         }
 
-        #endregion Constructors
+        #endregionÂ Constructors
 
-        #region Events
+        #regionÂ Events
 
         public event EventHandler<TextBoxOverlayHideEventArgs> Hidden;
 
-        #endregion Events
+        #endregionÂ Events
 
-        #region Overridden Methods
+        #regionÂ OverriddenÂ Methods
 
         protected override void OnKeyDown(KeyEventArgs e)
         {
@@ -860,9 +860,9 @@ namespace Kaxaml.Plugins.Default
             base.OnLostMouseCapture(e);
         }
 
-        #endregion Overridden Methods
+        #endregionÂ OverriddenÂ Methods
 
-        #region Public Methods
+        #regionÂ PublicÂ Methods
 
         public void Hide(TextBoxOverlayResult result)
         {
@@ -919,22 +919,22 @@ namespace Kaxaml.Plugins.Default
             IsOpen = true;
         }
 
-        #endregion Public Methods
+        #endregionÂ PublicÂ Methods
 
     }
 
     internal sealed class ElementAdorner : Adorner
     {
 
-        #region Fields
+        #regionÂ Fields
 
 
         private Point _Offset;
         UIElement _Element;
 
-        #endregion Fields
+        #endregionÂ Fields
 
-        #region Constructors
+        #regionÂ Constructors
 
         public ElementAdorner(UIElement owner, UIElement element, Point offset)
             : base(owner)
@@ -945,9 +945,9 @@ namespace Kaxaml.Plugins.Default
             Offset = offset;
         }
 
-        #endregion Constructors
+        #endregionÂ Constructors
 
-        #region Properties
+        #regionÂ Properties
 
 
         protected override int VisualChildrenCount
@@ -970,9 +970,9 @@ namespace Kaxaml.Plugins.Default
         }
 
 
-        #endregion Properties
+        #endregionÂ Properties
 
-        #region Overridden Methods
+        #regionÂ OverriddenÂ Methods
 
         protected override Size ArrangeOverride(Size finalSize)
         {
@@ -985,9 +985,9 @@ namespace Kaxaml.Plugins.Default
             return _Element;
         }
 
-        #endregion Overridden Methods
+        #endregionÂ OverriddenÂ Methods
 
-        #region Methods
+        #regionÂ Methods
 
         internal void Hide()
         {
@@ -995,7 +995,7 @@ namespace Kaxaml.Plugins.Default
             _Element = null;
         }
 
-        #endregion Methods
+        #endregionÂ Methods
 
     }
 

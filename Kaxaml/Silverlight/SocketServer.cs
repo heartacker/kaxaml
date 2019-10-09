@@ -10,14 +10,14 @@ namespace Kaxaml.Silverlight
     public class SocketServer
     {
 
-        #region Const Fields
+        #regionÂ ConstÂ Fields
 
         private const int Receive = 1;
         private const int Send = 0;
 
-        #endregion Const Fields
+        #endregionÂ ConstÂ Fields
 
-        #region Static Fields
+        #regionÂ StaticÂ Fields
 
         private static AutoResetEvent autoEvent = new AutoResetEvent(false);
         private static AutoResetEvent[] autoSendReceiveEvents = new AutoResetEvent[]
@@ -26,9 +26,9 @@ namespace Kaxaml.Silverlight
                 new AutoResetEvent(false)
         };
 
-        #endregion Static Fields
+        #endregionÂ StaticÂ Fields
 
-        #region Fields
+        #regionÂ Fields
 
 
         bool isConnected;
@@ -37,7 +37,7 @@ namespace Kaxaml.Silverlight
         Socket listener;
         Socket worker;
 
-        #endregion Fields
+        #endregionÂ Fields
 
 
         #region Public Methods
@@ -156,7 +156,7 @@ namespace Kaxaml.Silverlight
                 isConnected = true;
                 RaiseConnected();
 
-                // setup the socket to receive new connections 
+                // setup the socket to receive new connections
                 listener.BeginAccept(new AsyncCallback(OnClientConnect), null);
             }
             catch (SocketException se)
@@ -215,22 +215,22 @@ namespace Kaxaml.Silverlight
     public class MessageReceivedEventArgs : EventArgs
     {
 
-        #region Constructors
+        #regionÂ Constructors
 
         public MessageReceivedEventArgs(string message)
         {
             Message = message;
         }
 
-        #endregion Constructors
+        #endregionÂ Constructors
 
-        #region Properties
+        #regionÂ Properties
 
 
         public string Message { get; set; }
 
 
-        #endregion Properties
+        #endregionÂ Properties
 
     }
 

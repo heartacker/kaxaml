@@ -10,21 +10,21 @@ namespace Kaxaml.CodeCompletion
     public class XmlCompletionDataProvider : ICompletionDataProvider
     {
 
-        #region Static Fields
+        #regionÂ StaticÂ Fields
 
         static XmlSchemaCompletionData defaultSchemaCompletionData = null;
 
-        #endregion Static Fields
+        #endregionÂ StaticÂ Fields
 
-        #region Fields
+        #regionÂ Fields
 
 
         protected string preSelection = null;
         string defaultNamespacePrefix = String.Empty;
 
-        #endregion Fields
+        #endregionÂ Fields
 
-        #region Properties
+        #regionÂ Properties
 
 
         public static bool IsSchemaLoaded
@@ -33,9 +33,9 @@ namespace Kaxaml.CodeCompletion
         }
 
 
-        #endregion Properties
+        #endregionÂ Properties
 
-        #region Static Methods
+        #regionÂ StaticÂ Methods
 
         public static void LoadSchema(string filename)
         {
@@ -71,7 +71,7 @@ namespace Kaxaml.CodeCompletion
             }
         }
 
-        #endregion Static Methods
+        #endregionÂ StaticÂ Methods
 
 
         #region ICompletionDataProvider Members

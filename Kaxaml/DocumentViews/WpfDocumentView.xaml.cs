@@ -23,7 +23,7 @@ namespace Kaxaml.DocumentViews
     public partial class WPFDocumentView : System.Windows.Controls.UserControl, IXamlDocumentView
     {
 
-        #region Static Fields
+        #regionÂ StaticÂ Fields
 
         //-------------------------------------------------------------------
         //
@@ -32,16 +32,16 @@ namespace Kaxaml.DocumentViews
         //-------------------------------------------------------------------
         private static DispatcherTimer dispatcherTimer;
 
-        #endregion Static Fields
+        #endregionÂ StaticÂ Fields
 
-        #region Fields
+        #regionÂ Fields
 
 
         private bool UnhandledExceptionRaised;
 
-        #endregion Fields
+        #endregionÂ Fields
 
-        #region Constructors
+        #regionÂ Constructors
 
         public WPFDocumentView()
         {
@@ -56,9 +56,9 @@ namespace Kaxaml.DocumentViews
             XmlCompletionDataProvider.LoadSchema(schemafile);
         }
 
-        #endregion Constructors
+        #endregionÂ Constructors
 
-        #region Event Handlers
+        #regionÂ EventÂ Handlers
 
         void ContentArea_ContentRendered(object sender, EventArgs e)
         {
@@ -85,7 +85,7 @@ namespace Kaxaml.DocumentViews
             }
         }
 
-        #endregion Event Handlers
+        #endregionÂ EventÂ Handlers
         //-------------------------------------------------------------------
         //
         //  Properties
@@ -288,8 +288,8 @@ namespace Kaxaml.DocumentViews
 
         private void ErrorOverlayAnimationCompleted(object sender, EventArgs e)
         {
-            // once we're done fading into the "snapshot", we want to 
-            // get rid of the existing content so that any really bad 
+            // once we're done fading into the "snapshot", we want to
+            // get rid of the existing content so that any really bad
             // error (like one that is consuming memory) isn't persisted
             ContentArea.Content = null;
         }
@@ -548,7 +548,7 @@ namespace Kaxaml.DocumentViews
             ErrorText = ErrorText.Replace("\n", "");
             ErrorText = ErrorText.Replace("\t", "");
 
-            // get rid of everything after "Line" if it is in the last 30 characters 
+            // get rid of everything after "Line" if it is in the last 30 characters
             int pos = ErrorText.LastIndexOf("Line");
             if (pos > 0 && pos > (ErrorText.Length - 50))
             {

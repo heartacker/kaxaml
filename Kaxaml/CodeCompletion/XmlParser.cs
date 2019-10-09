@@ -14,12 +14,12 @@ namespace Kaxaml.CodeCompletion
     /// </summary>
     /// <remarks>
     /// All of the routines return <see cref="XmlElementPath"/> objects
-    /// since we are interested in the complete path or tree to the 
-    /// currently active element. 
+    /// since we are interested in the complete path or tree to the
+    /// currently active element.
     /// </remarks>
     public static class XmlParser
     {
-        #region Static Methods
+        #regionÂ StaticÂ Methods
 
         /// <summary>
         /// Locates the index of the end tag character.
@@ -86,7 +86,7 @@ namespace Kaxaml.CodeCompletion
         }
 
         /// <summary>
-        /// Gets path of the xml element start tag that the specified 
+        /// Gets path of the xml element start tag that the specified
         /// <paramref name="index"/> is currently inside.
         /// </summary>
         /// <remarks>If the index outside the start tag then an empty path
@@ -144,9 +144,9 @@ namespace Kaxaml.CodeCompletion
         }
 
         /// <summary>
-        /// Gets path of the xml element start tag that the specified 
+        /// Gets path of the xml element start tag that the specified
         /// <paramref name="index"/> is currently located. This is different to the
-        /// GetActiveElementStartPath method since the index can be inside the element 
+        /// GetActiveElementStartPath method since the index can be inside the element
         /// name.
         /// </summary>
         /// <remarks>If the index outside the start tag then an empty path
@@ -174,7 +174,7 @@ namespace Kaxaml.CodeCompletion
         }
 
         /// <summary>
-        /// Gets the text of the xml element start tag that the index is 
+        /// Gets the text of the xml element start tag that the index is
         /// currently inside.
         /// </summary>
         /// <returns>
@@ -198,7 +198,7 @@ namespace Kaxaml.CodeCompletion
         }
 
         /// <summary>
-        /// Gets the name of the attribute inside but before the specified 
+        /// Gets the name of the attribute inside but before the specified
         /// index.
         /// </summary>
         public static string GetAttributeName(string xml, int index)
@@ -439,7 +439,7 @@ namespace Kaxaml.CodeCompletion
         /// <summary>
         /// Gets the element name from the element start tag string.
         /// </summary>
-        /// <param name="xml">This string must start at the 
+        /// <param name="xml">This string must start at the
         /// element we are interested in.</param>
         static QualifiedName GetElementName(string xml)
         {
@@ -498,7 +498,7 @@ namespace Kaxaml.CodeCompletion
         /// Gets the element namespace from the element start tag
         /// string.
         /// </summary>
-        /// <param name="xml">This string must start at the 
+        /// <param name="xml">This string must start at the
         /// element we are interested in.</param>
         static NamespaceURI GetElementNamespace(string xml)
         {
@@ -665,7 +665,7 @@ namespace Kaxaml.CodeCompletion
         }
 
         /// <summary>
-        /// Checks whether the attribute at the end of the string is a 
+        /// Checks whether the attribute at the end of the string is a
         /// namespace declaration.
         /// </summary>
         public static bool IsNamespaceDeclaration(string xml, int index)
@@ -761,9 +761,9 @@ namespace Kaxaml.CodeCompletion
             return reversedString.ToString();
         }
 
-        #endregion Static Methods
+        #endregionÂ StaticÂ Methods
 
-        #region Nested Classes
+        #regionÂ NestedÂ Classes
 
 
         /// <summary>
@@ -773,15 +773,15 @@ namespace Kaxaml.CodeCompletion
         class NamespaceURI
         {
 
-            #region Fields
+            #regionÂ Fields
 
 
             string namespaceURI = String.Empty;
             string prefix = String.Empty;
 
-            #endregion Fields
+            #endregionÂ Fields
 
-            #region Constructors
+            #regionÂ Constructors
 
             public NamespaceURI(string namespaceURI, string prefix)
             {
@@ -793,9 +793,9 @@ namespace Kaxaml.CodeCompletion
             {
             }
 
-            #endregion Constructors
+            #endregionÂ Constructors
 
-            #region Properties
+            #regionÂ Properties
 
 
             public string Namespace
@@ -827,10 +827,10 @@ namespace Kaxaml.CodeCompletion
             }
 
 
-            #endregion Properties
+            #endregionÂ Properties
 
         }
-        #endregion Nested Classes
+        #endregionÂ NestedÂ Classes
 
     }
 
@@ -855,22 +855,22 @@ namespace Kaxaml.CodeCompletion
     public class XmlElementPath
     {
 
-        #region Fields
+        #regionÂ Fields
 
 
         QualifiedNameCollection elements = new QualifiedNameCollection();
 
-        #endregion Fields
+        #endregionÂ Fields
 
-        #region Constructors
+        #regionÂ Constructors
 
         public XmlElementPath()
         {
         }
 
-        #endregion Constructors
+        #endregionÂ Constructors
 
-        #region Properties
+        #regionÂ Properties
 
 
         /// <summary>
@@ -886,12 +886,12 @@ namespace Kaxaml.CodeCompletion
         }
 
 
-        #endregion Properties
+        #endregionÂ Properties
 
-        #region Overridden Methods
+        #regionÂ OverriddenÂ Methods
 
         /// <summary>
-        /// An xml element path is considered to be equal if 
+        /// An xml element path is considered to be equal if
         /// each path item has the same name and namespace.
         /// </summary>
         public override bool Equals(object obj)
@@ -922,9 +922,9 @@ namespace Kaxaml.CodeCompletion
             return elements.GetHashCode();
         }
 
-        #endregion Overridden Methods
+        #endregionÂ OverriddenÂ Methods
 
-        #region Private Methods
+        #regionÂ PrivateÂ Methods
 
         /// <summary>
         /// Finds the first parent that does belong in the specified
@@ -962,13 +962,13 @@ namespace Kaxaml.CodeCompletion
             }
         }
 
-        #endregion Private Methods
+        #endregionÂ PrivateÂ Methods
 
-        #region Public Methods
+        #regionÂ PublicÂ Methods
 
         /// <summary>
-        /// Compacts the path so it only contains the elements that are from 
-        /// the namespace of the last element in the path. 
+        /// Compacts the path so it only contains the elements that are from
+        /// the namespace of the last element in the path.
         /// </summary>
         /// <remarks>This method is used when we need to know the path for a
         /// particular namespace and do not care about the complete path.
@@ -989,7 +989,7 @@ namespace Kaxaml.CodeCompletion
             }
         }
 
-        #endregion Public Methods
+        #endregionÂ PublicÂ Methods
 
     }
 
@@ -1003,24 +1003,24 @@ namespace Kaxaml.CodeCompletion
     /// An <see cref="XmlQualifiedName"/> with the namespace prefix.
     /// </summary>
     /// <remarks>
-    /// The namespace prefix active for a namespace is 
+    /// The namespace prefix active for a namespace is
     /// needed when an element is inserted via autocompletion. This
-    /// class just adds this extra information alongside the 
+    /// class just adds this extra information alongside the
     /// <see cref="XmlQualifiedName"/>.
     /// </remarks>
     public class QualifiedName
     {
 
-        #region Fields
+        #regionÂ Fields
 
 
         string prefix = String.Empty;
 
         XmlQualifiedName xmlQualifiedName = XmlQualifiedName.Empty;
 
-        #endregion Fields
+        #endregionÂ Fields
 
-        #region Constructors
+        #regionÂ Constructors
 
         public QualifiedName(string name, string namespaceUri, string prefix)
         {
@@ -1037,9 +1037,9 @@ namespace Kaxaml.CodeCompletion
         {
         }
 
-        #endregion Constructors
+        #endregionÂ Constructors
 
-        #region Properties
+        #regionÂ Properties
 
 
         /// <summary>
@@ -1088,9 +1088,9 @@ namespace Kaxaml.CodeCompletion
         }
 
 
-        #endregion Properties
+        #endregionÂ Properties
 
-        #region Static Methods
+        #regionÂ StaticÂ Methods
 
         public static bool operator !=(QualifiedName lhs, QualifiedName rhs)
         {
@@ -1113,12 +1113,12 @@ namespace Kaxaml.CodeCompletion
             return equals;
         }
 
-        #endregion Static Methods
+        #endregionÂ StaticÂ Methods
 
-        #region Overridden Methods
+        #regionÂ OverriddenÂ Methods
 
         /// <summary>
-        /// A qualified name is considered equal if the namespace and 
+        /// A qualified name is considered equal if the namespace and
         /// name are the same.  The prefix is ignored.
         /// </summary>
         public override bool Equals(object obj)
@@ -1147,7 +1147,7 @@ namespace Kaxaml.CodeCompletion
             return xmlQualifiedName.GetHashCode();
         }
 
-        #endregion Overridden Methods
+        #endregionÂ OverriddenÂ Methods
 
     }
 
@@ -1163,7 +1163,7 @@ namespace Kaxaml.CodeCompletion
     public class QualifiedNameCollection : CollectionBase
     {
 
-        #region Constructors
+        #regionÂ Constructors
 
         /// <summary>
         ///   Initializes a new instance of <see cref='QualifiedNameCollection'/> based on another <see cref='QualifiedNameCollection'/>.
@@ -1194,9 +1194,9 @@ namespace Kaxaml.CodeCompletion
         {
         }
 
-        #endregion Constructors
+        #endregionÂ Constructors
 
-        #region Properties
+        #regionÂ Properties
 
 
         /// <summary>
@@ -1238,12 +1238,12 @@ namespace Kaxaml.CodeCompletion
         }
 
 
-        #endregion Properties
+        #endregionÂ Properties
 
-        #region Public Methods
+        #regionÂ PublicÂ Methods
 
         /// <summary>
-        ///   Adds a <see cref='QualifiedName'/> with the specified value to the 
+        ///   Adds a <see cref='QualifiedName'/> with the specified value to the
         ///   <see cref='QualifiedNameCollection'/>.
         /// </summary>
         /// <param name='val'>The <see cref='QualifiedName'/> to add.</param>
@@ -1285,12 +1285,12 @@ namespace Kaxaml.CodeCompletion
         }
 
         /// <summary>
-        ///   Gets a value indicating whether the 
+        ///   Gets a value indicating whether the
         ///    <see cref='QualifiedNameCollection'/> contains the specified <see cref='QualifiedName'/>.
         /// </summary>
         /// <param name='val'>The <see cref='QualifiedName'/> to locate.</param>
         /// <returns>
-        /// <see langword='true'/> if the <see cref='QualifiedName'/> is contained in the collection; 
+        /// <see langword='true'/> if the <see cref='QualifiedName'/> is contained in the collection;
         ///   otherwise, <see langword='false'/>.
         /// </returns>
         /// <seealso cref='QualifiedNameCollection.IndexOf'/>
@@ -1300,7 +1300,7 @@ namespace Kaxaml.CodeCompletion
         }
 
         /// <summary>
-        ///   Copies the <see cref='QualifiedNameCollection'/> values to a one-dimensional <see cref='Array'/> instance at the 
+        ///   Copies the <see cref='QualifiedNameCollection'/> values to a one-dimensional <see cref='Array'/> instance at the
         ///    specified index.
         /// </summary>
         /// <param name='array'>The one-dimensional <see cref='Array'/> that is the destination of the values copied from <see cref='QualifiedNameCollection'/>.</param>
@@ -1330,12 +1330,12 @@ namespace Kaxaml.CodeCompletion
         }
 
         /// <summary>
-        ///    Returns the index of a <see cref='QualifiedName'/> in 
+        ///    Returns the index of a <see cref='QualifiedName'/> in
         ///       the <see cref='QualifiedNameCollection'/>.
         /// </summary>
         /// <param name='val'>The <see cref='QualifiedName'/> to locate.</param>
         /// <returns>
-        ///   The index of the <see cref='QualifiedName'/> of <paramref name='val'/> in the 
+        ///   The index of the <see cref='QualifiedName'/> of <paramref name='val'/> in the
         ///   <see cref='QualifiedNameCollection'/>, if found; otherwise, -1.
         /// </returns>
         /// <seealso cref='QualifiedNameCollection.Contains'/>
@@ -1387,9 +1387,9 @@ namespace Kaxaml.CodeCompletion
             }
         }
 
-        #endregion Public Methods
+        #endregionÂ PublicÂ Methods
 
-        #region Nested Classes
+        #regionÂ NestedÂ Classes
 
 
         /// <summary>
@@ -1401,15 +1401,15 @@ namespace Kaxaml.CodeCompletion
         public class QualifiedNameEnumerator : IEnumerator
         {
 
-            #region Fields
+            #regionÂ Fields
 
 
             IEnumerable temp;
             IEnumerator baseEnumerator;
 
-            #endregion Fields
+            #endregionÂ Fields
 
-            #region Constructors
+            #regionÂ Constructors
 
             /// <summary>
             ///   Initializes a new instance of <see cref='QualifiedNameEnumerator'/>.
@@ -1420,9 +1420,9 @@ namespace Kaxaml.CodeCompletion
                 this.baseEnumerator = temp.GetEnumerator();
             }
 
-            #endregion Constructors
+            #endregionÂ Constructors
 
-            #region Properties
+            #regionÂ Properties
 
 
             object IEnumerator.Current
@@ -1445,9 +1445,9 @@ namespace Kaxaml.CodeCompletion
             }
 
 
-            #endregion Properties
+            #endregionÂ Properties
 
-            #region Public Methods
+            #regionÂ PublicÂ Methods
 
             /// <summary>
             ///   Advances the enumerator to the next <see cref='QualifiedName'/> of the <see cref='QualifiedNameCollection'/>.
@@ -1465,10 +1465,10 @@ namespace Kaxaml.CodeCompletion
                 baseEnumerator.Reset();
             }
 
-            #endregion Public Methods
+            #endregionÂ PublicÂ Methods
 
         }
-        #endregion Nested Classes
+        #endregionÂ NestedÂ Classes
 
     }
 

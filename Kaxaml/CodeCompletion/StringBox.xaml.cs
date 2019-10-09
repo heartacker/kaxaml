@@ -27,7 +27,7 @@ namespace Kaxaml.CodeCompletion
     public partial class StringBox : System.Windows.Controls.UserControl
     {
 
-		#region Constructors 
+		#regionÂ ConstructorsÂ 
 
         public StringBox()
         {
@@ -47,7 +47,7 @@ namespace Kaxaml.CodeCompletion
             StringHostItems.Add(new StringHost("")); //10
         }
 
-		#endregion Constructors 
+		#endregionÂ ConstructorsÂ 
 
 
         #region Private Fields
@@ -65,11 +65,11 @@ namespace Kaxaml.CodeCompletion
 
         public int SelectedIndex
         {
-            get 
+            get
             {
                 return _TopOffset + _SelectedIndexInView;
             }
-            set 
+            set
             {
                 if (value >= 0 && value < CompletionItems.Count)
                 {
@@ -105,7 +105,7 @@ namespace Kaxaml.CodeCompletion
 
         public object SelectedItem
         {
-            get 
+            get
             {
                 return CompletionItems[SelectedIndex];
             }
@@ -257,13 +257,13 @@ namespace Kaxaml.CodeCompletion
 
         void ScrollTextTimer_Tick(object sender, EventArgs e)
         {
-            HideScrollText();   
+            HideScrollText();
         }
 
         private void ShowScrollText(string s)
         {
             ScrollText.Text = s;
-            
+
             Storyboard sb = this.FindResource("ShowScrollText") as Storyboard;
             if (sb != null)
             {
@@ -305,7 +305,7 @@ namespace Kaxaml.CodeCompletion
                 StringHostItems[i].Value = ((ICompletionData) CompletionItems[i + offset]).Text;
                 StringHostItems[i].Tooltip = ((ICompletionData)CompletionItems[i + offset]).Description;
             }
-            
+
             if (UpdateScrollBar)
             {
                 ScrollerSlider.Value = offset;
@@ -518,7 +518,7 @@ namespace Kaxaml.CodeCompletion
     public class StringHost : INotifyPropertyChanged
     {
 
-		#region Fields 
+		#regionÂ FieldsÂ 
 
 
         private string _Value;
@@ -527,18 +527,18 @@ namespace Kaxaml.CodeCompletion
         internal bool _IsSelectable = true;
         private bool _IsSelected = false;
 
-		#endregion Fields 
+		#endregionÂ FieldsÂ 
 
-		#region Constructors 
+		#regionÂ ConstructorsÂ 
 
         public StringHost(string value)
         {
             Value = value;
         }
 
-		#endregion Constructors 
+		#endregionÂ ConstructorsÂ 
 
-		#region Properties 
+		#regionÂ PropertiesÂ 
 
 
         public string Value
@@ -582,16 +582,16 @@ namespace Kaxaml.CodeCompletion
         }
 
 
-		#endregion Properties 
+		#endregionÂ PropertiesÂ 
 
-		#region Overridden Methods 
+		#regionÂ OverriddenÂ MethodsÂ 
 
         public override string ToString()
         {
             return Value;
         }
 
-		#endregion Overridden Methods 
+		#endregionÂ OverriddenÂ MethodsÂ 
 
 
         #region INotifyPropertyChanged
@@ -612,14 +612,14 @@ namespace Kaxaml.CodeCompletion
     public class ContentItemsControl : ItemsControl
     {
 
-		#region Overridden Methods 
+		#regionÂ OverriddenÂ MethodsÂ 
 
         protected override DependencyObject GetContainerForItemOverride()
         {
             return new ContentControl();
         }
 
-		#endregion Overridden Methods 
+		#endregionÂ OverriddenÂ MethodsÂ 
 
     }
 

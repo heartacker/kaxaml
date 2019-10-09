@@ -7,7 +7,7 @@ namespace Kaxaml.Silverlight
     class SilverlightBridge
     {
 
-        #region Fields
+        #regionÂ Fields
 
 
         string _xaml;
@@ -16,18 +16,18 @@ namespace Kaxaml.Silverlight
 
         SocketServer server = new SocketServer();
 
-        #endregion Fields
+        #endregionÂ Fields
 
-        #region Constructors
+        #regionÂ Constructors
 
         public SilverlightBridge()
         {
             Listen();
         }
 
-        #endregion Constructors
+        #endregionÂ Constructors
 
-        #region Properties
+        #regionÂ Properties
 
 
         public bool IsConnected { get; set; }
@@ -35,9 +35,9 @@ namespace Kaxaml.Silverlight
         public bool IsListening { get; set; }
 
 
-        #endregion Properties
+        #endregionÂ Properties
 
-        #region Event Handlers
+        #regionÂ EventÂ Handlers
 
         void server_Connected(object sender, EventArgs e)
         {
@@ -92,9 +92,9 @@ namespace Kaxaml.Silverlight
             }
         }
 
-        #endregion Event Handlers
+        #endregionÂ EventÂ Handlers
 
-        #region Private Methods
+        #regionÂ PrivateÂ Methods
 
         private void SendXaml()
         {
@@ -122,9 +122,9 @@ namespace Kaxaml.Silverlight
             }
         }
 
-        #endregion Private Methods
+        #endregionÂ PrivateÂ Methods
 
-        #region Public Methods
+        #regionÂ PublicÂ Methods
 
         public void Listen()
         {
@@ -142,7 +142,7 @@ namespace Kaxaml.Silverlight
             thread.Start();
         }
 
-        #endregion Public Methods
+        #endregionÂ PublicÂ Methods
 
 
         #region Port Server
@@ -228,7 +228,7 @@ namespace Kaxaml.Silverlight
     public class ParseCompletedEventArgs : EventArgs
     {
 
-        #region Constructors
+        #regionÂ Constructors
 
         public ParseCompletedEventArgs(bool isValidXaml, string errorMessage, int errorLineNumber, int errorLinePosition)
         {
@@ -238,9 +238,9 @@ namespace Kaxaml.Silverlight
             ErrorLinePosition = errorLinePosition;
         }
 
-        #endregion Constructors
+        #endregionÂ Constructors
 
-        #region Properties
+        #regionÂ Properties
 
 
         public string ErrorMessage { get; set; }
@@ -253,7 +253,7 @@ namespace Kaxaml.Silverlight
         public int ErrorLinePosition { get; set; }
 
 
-        #endregion Properties
+        #endregionÂ Properties
 
     }
 

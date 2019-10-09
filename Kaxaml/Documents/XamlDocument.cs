@@ -9,7 +9,7 @@ namespace Kaxaml.Documents
     public class XamlDocument : INotifyPropertyChanged
     {
 
-        #region Static Methods
+        #regionÂ StaticÂ Methods
 
         public static XamlDocument FromFile(string fullPath)
         {
@@ -36,7 +36,7 @@ namespace Kaxaml.Documents
             return null;
         }
 
-        #endregion Static Methods
+        #endregionÂ StaticÂ Methods
 
 
         #region Constructors

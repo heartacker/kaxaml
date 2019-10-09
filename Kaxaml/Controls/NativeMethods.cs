@@ -5,7 +5,7 @@ namespace Kaxaml.Controls
 {
     public static class NativeMethods
     {
-        #region Static Methods
+        #regionÂ StaticÂ Methods
 
         [DllImport("gdi32.dll")]
         public static extern bool BitBlt(IntPtr hdc, int nXDest, int nYDest, int nWidth,
@@ -36,7 +36,7 @@ namespace Kaxaml.Controls
         [DllImport("gdi32.dll", ExactSpelling = true, PreserveSig = true, SetLastError = true)]
         public static extern IntPtr SelectObject(IntPtr hdc, IntPtr hgdiobj);
 
-        #endregion Static Methods
+        #endregionÂ StaticÂ Methods
         [StructLayout(LayoutKind.Sequential)]
         public struct RECT
         {
